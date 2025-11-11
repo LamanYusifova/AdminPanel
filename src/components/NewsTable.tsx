@@ -1,11 +1,11 @@
 import { useState, useMemo, useEffect } from "react";
 import type { NewsItem } from "../../src/mocks/newsData";
-import type { News } from "../components/Main/EditModalProps";
+// import type { News } from "../components/Main/EditModalProps";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import trash from "../../src/assets/images/trash.png"
 import { GrFormClose } from "react-icons/gr";
-import EditModal from '../../src/components/Main/EditModalProps';
+// import EditModal from '../../src/components/Main/EditModalProps';
 
 interface NewsTableProps {
     data: NewsItem[];
@@ -46,8 +46,8 @@ export default function NewsTable({ data, itemsPerPage = 6 }: NewsTableProps) {
         setShowDeleteModal(false);
         setNewsToDelete(null);
     };
-    const [isEditOpen, setIsEditOpen] = useState(false);
-    const [selectedNews, setSelectedNews] = useState<News | null>(null);
+    // const [isEditOpen, setIsEditOpen] = useState(false);
+    // const [selectedNews, setSelectedNews] = useState<News | null>(null);
     return (
         <div className="overflow-x-auto rounded-lg">
             <table className="w-full border border-gray-200">
