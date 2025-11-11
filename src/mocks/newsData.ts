@@ -8,15 +8,16 @@ import newsImg4 from '../assets/images/newsImg4.jpg';
 import newsImg5 from '../assets/images/newsImg5.jpg';
 
 export interface NewsItem {
-    id: string
-    image: string
-    title: string
-    excerpt?: string;
-    type: NewsType;
-    sharingTime: string; 
-    status: ActiveStatus;
-    publishStatus: PublishStatus;
-    author: string;
+  id: string;
+  title: string;
+  excerpt: string;
+  image?: string;
+  type: "News" | "Announcement";
+  sharingTime: string;
+  status: "Active" | "Inactive";
+  publishStatus: string;
+  author: string;
+  url?: string;
 }
 
 export const newsData: NewsItem[] = [
@@ -218,5 +219,5 @@ export const newsData: NewsItem[] = [
     publishStatus: "Publish",
     author: "snovruzlu"
   },
-  
+
 ];

@@ -3,7 +3,7 @@ import { FiPlus } from "react-icons/fi";
 import { newsData } from "../../mocks/newsData";
 import searchIcon from "../../assets/images/search-normal.png";
 import type { NewsType, ActiveStatus } from "../../mocks/newsData";
-import NewsTable from "../NewsTable";
+import NewsTable from "./NewsTable";
 import AccordionFilter from "./AccordionFilter";
 
 
