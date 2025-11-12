@@ -55,6 +55,7 @@ export default function EditModal({ news, onClose, onSave }: EditModalProps) {
       coverImage,
       url,
       category,
+      status: news.status || "Active",
     };
 
    

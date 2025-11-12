@@ -10,4 +10,6 @@ export interface News {
   title_en: string;
   content_az: string;
   content_en: string;
+  status?: string;
+  author: string;
 }
