@@ -73,11 +73,11 @@ export default function NewsTable({ data, itemsPerPage = 6 }: NewsTableProps) {
         const newsForEdit: News = {
             id: item.id,
             title: item.title,
-            url: item.url || "", // əgər NewsItem-də url yoxdursa default ""
+            url: item.url || "", 
             category: item.type,
             coverImage: item.image,
             content: item.excerpt || "",
-            language: "az", // default dil
+            language: "az", 
             title_az: item.title,
             title_en: "",
             content_az: item.excerpt || "",
@@ -134,7 +134,6 @@ export default function NewsTable({ data, itemsPerPage = 6 }: NewsTableProps) {
                 </tbody>
             </table>
 
-            {/* Pagination */}
             <div className="flex justify-center gap-2 mt-4">
                 <button disabled={currentPage === 1} onClick={() => setCurrentPage(p => p - 1)} className="px-3 py-1 rounded disabled:opacity-50">
                     <IoIosArrowBack />
@@ -147,7 +146,7 @@ export default function NewsTable({ data, itemsPerPage = 6 }: NewsTableProps) {
                 </button>
             </div>
 
-            {/* Modals */}
+            
             {showDeleteModal && newsToDelete && (
                 <DeleteModal
                     news={newsToDelete}
@@ -158,7 +157,7 @@ export default function NewsTable({ data, itemsPerPage = 6 }: NewsTableProps) {
 
             {showEditModal && newsToEdit && (
                 <EditModal
-                    news={newsToEdit} // artıq News tipidir
+                    news={newsToEdit} 
                     onClose={() => setShowEditModal(false)}
                     onSave={handleSaveEditedNews}
                 />

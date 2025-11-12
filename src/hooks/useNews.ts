@@ -1,11 +1,9 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-// import { api } from "./client";
+
 import type { NewsItem } from "../mocks/newsData";
 import { api } from "../api/client";
 
-// -------------------
-// Fetch news
-// -------------------
+
 export const useNews = (params?: Record<string, string | number | null>) => {
   return useQuery<NewsItem[], Error>({
     queryKey: ["news", params],
@@ -22,9 +20,7 @@ export const useNews = (params?: Record<string, string | number | null>) => {
   });
 };
 
-// -------------------
-// Create news
-// -------------------
+
 export const useCreateNews = () => {
   const queryClient = useQueryClient();
   return useMutation<NewsItem, Error, Partial<NewsItem>>({
@@ -38,9 +34,7 @@ export const useCreateNews = () => {
   });
 };
 
-// -------------------
-// Update news
-// -------------------
+
 export const useUpdateNews = () => {
   const queryClient = useQueryClient();
   return useMutation<NewsItem, Error, { id: string; payload: Partial<NewsItem> }>({
@@ -54,9 +48,7 @@ export const useUpdateNews = () => {
   });
 };
 
-// -------------------
-// Delete news
-// -------------------
+
 export const useDeleteNews = () => {
   const queryClient = useQueryClient();
   return useMutation<NewsItem, Error, string>({

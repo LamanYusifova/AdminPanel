@@ -5,7 +5,7 @@ export interface News {
   category: "News" | "Announcement";
   coverImage?: string;
   content: string;
-  language: "az" | "en"; // xəbər dili
+  language: "az" | "en"; 
   title_az: string;
   title_en: string;
   content_az: string;

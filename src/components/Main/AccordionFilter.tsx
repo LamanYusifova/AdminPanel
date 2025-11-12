@@ -27,7 +27,7 @@ export default function AccordionFilter({
 
   return (
     <div className="w-44 relative ">
-      {/* Üst düymə */}
+     
       <button
         onClick={onToggle}
         className="w-full px-3 py-1 bg-white border border-[#F7F7F7] rounded-lg flex justify-between items-center font-lato"
@@ -43,17 +43,17 @@ export default function AccordionFilter({
         {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </button>
 
-      {/* Açılan menyu */}
+   
       {isOpen && (
         <div className="bg-white border border-[#F7F7F7] mt-1 p-3 rounded-lg shadow-md absolute z-10 w-full font-lato">
           {options
-            .filter((opt) => opt !== "All Status") // 👈 “All Status” göstərilmir
+            .filter((opt) => opt !== "All Status") 
             .map((opt) => (
               <button
                 key={opt}
                 onClick={() => {
                   onSelect(opt);
-                  onToggle(); // seçiləndə bağlansın
+                  onToggle();
                 }}
                 className={`text-left w-full p-2 hover:text-[#243C7B] flex items-center gap-2 text-[#787486]`}
               >

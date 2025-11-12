@@ -17,7 +17,7 @@ interface EditModalProps {
 }
 
 export default function EditModal({ news, onClose, onSave }: EditModalProps) {
-  const [page, setPage] = useState<1 | 2>(1); // səhifə nömrəsi
+  const [page, setPage] = useState<1 | 2>(1); 
   const [language, setLanguage] = useState<"az" | "en">(news.language);
   const [title, setTitle] = useState(language === "az" ? news.title_az : news.title_en);
   const [content, setContent] = useState(language === "az" ? news.content_az : news.content_en);
@@ -57,14 +57,14 @@ export default function EditModal({ news, onClose, onSave }: EditModalProps) {
       category,
     };
 
-    // ✅ LocalStorage-də yadda saxla
+   
     const existingData = JSON.parse(localStorage.getItem("newsData") || "[]");
     const updatedData = Array.isArray(existingData)
       ? [...existingData.filter((item) => item.id !== news.id), updatedNews]
       : [updatedNews];
     localStorage.setItem("newsData", JSON.stringify(updatedData));
 
-    // Əvvəlki onSave funksiyasını çağır (dizayn pozulmadan)
+    
     onSave(updatedNews);
   };
 
@@ -72,7 +72,7 @@ export default function EditModal({ news, onClose, onSave }: EditModalProps) {
     <div onClick={onClose} className="fixed inset-0 flex items-center justify-center bg-[#17171799] z-50">
       <div onClick={e => e.stopPropagation()} className="flex flex-col gap-6 bg-white p-6 rounded-xl w-[600px] max-h-[90vh] overflow-y-auto font-lato">
 
-        {/* Language Switch */}
+        
         <div className="mb-4 flex gap-2">
           <div className={`${language === "az" ? "border-[#243C7B]" : "border-gray-300"} rounded-[20px] border flex justify-center items-center px-4 py-1 gap-2`}>
             <img src={az} alt="" className="w-4 h-4 rounded-[50%]" />
@@ -85,7 +85,7 @@ export default function EditModal({ news, onClose, onSave }: EditModalProps) {
           <button onClick={onClose} className="text-gray-500 font-bold text-lg translate-x-90 -translate-y-3">&times;</button>
         </div>
 
-        {/* Page 1 */}
+        
         {page === 1 && (
           <>
             <div className="flex justify-between items-center mb-4 font-lato">
@@ -138,7 +138,7 @@ export default function EditModal({ news, onClose, onSave }: EditModalProps) {
           </>
         )}
 
-        {/* Page 2 */}
+       
         {page === 2 && (
           <>
             <div className="flex justify-between items-center mb-4 font-lato">

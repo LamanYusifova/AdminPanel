@@ -14,7 +14,7 @@ function Header() {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
-  // Menyu məlumatları alt başlıqlarla birlikdə
+  
   const menus = [
     {
       id: "postMedia",
@@ -45,7 +45,7 @@ function Header() {
   return (
     <div className="flex flex-col gap-6 w-[318px] h-full rounded-2xl border border-[#F7F7F7] py-6 shadow-[#EBEBEB40]">
       
-      {/* Logo */}
+      
       <div className="flex gap-1.5 pl-3 items-center">
         <img src={logo} alt="Logo" className="w-[51px] h-[30px]" />
         <p className="font-medium text-[18px] font-lato">NAA Control Panel</p>
@@ -53,7 +53,7 @@ function Header() {
 
       <hr className="w-[318px] text-[#f3f3f3]" />
 
-      {/* Accordion Menu */}
+    
       <div className="flex flex-col gap-2 p-3">
         {menus.map((menu) => (
           <div key={menu.id}>
@@ -70,13 +70,12 @@ function Header() {
                 {menu.label}
               </div>
 
-              {/* Arrow Icon */}
               <IoIosArrowDown
                 className={`transition-transform duration-200 ${openMenu === menu.id ? "rotate-180" : "rotate-0"}`}
               />
             </button>
 
-            {/* Alt Menyu */}
+          
             {openMenu === menu.id && (
               <div className="flex flex-col p-5 mt-1 text-[#787486] gap-4 border rounded-xl border-[#f7f7f7]  shadow-[#EBEBEB40]">
                 {menu.subMenus.map((sub, index) => (

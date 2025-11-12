@@ -25,7 +25,7 @@ export default function Main() {
 
     return (
         <div className="flex-1 p-6 bg-[#EBEBEB40]">
-            {/* Header */}
+        
             <div className="flex items-center justify-between mb-6">
                 <div className="font-lato">
                     <p className="text-[24px]">News & Announcements</p>
@@ -39,7 +39,7 @@ export default function Main() {
                 </button>
             </div>
 
-            {/* Filters */}
+       
             <div className="bg-white flex gap-4 mb-6 border border-[#f7f7f7] shadow-[#EBEBEB40] p-6 rounded-xl">
                 <AccordionFilter
                     title="Type"
